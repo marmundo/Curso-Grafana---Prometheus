@@ -1,0 +1,188 @@
+<div class="formattedText" data-external-links="">
+  <p>
+    [00:00] Vamos dar sequência no nosso curso. Agora vamos criar mais dois
+    painéis. O primeiro vai ser o estado e o número das conexões com a base de
+    dados.
+  </p>
+  <p>
+    [00:18] Vou adicionar um painel e a métrica que vamos trabalhar aqui é a
+    <code>hikaricp_connections_active</code>, essa vai ser a primeira métrica.
+    Esse painel vai ter três métricas ao todo.
+  </p>
+  <p>
+    [00:36] Aqui, vou trabalhar com os <em>labels</em>
+    <code
+      >{application=”$application”, instance=”$instance”,
+      job=”app-forum-api”</code
+    >
+    e, além disso, vamos configurar o nosso <code>pool=”$pool”}</code>.
+  </p>
+  <p>
+    [01:20] É legal você olhar para a parte superior esquerda porque você
+    consegue verificar, na parte esquerda superior, as variáveis junto com o
+    <em>labels</em>. Temos essa métrica e essa métrica traz, basicamente, o
+    número de conexões que estão em estado ativo.
+  </p>
+  <p>
+    [01:48] Temos a primeira, aqui, vou colocar como legenda "<em>active</em>",
+    esse é o estado ativo. Vou copiar e vamos adicionar uma nova
+    <em>query</em> que, ao invés de olhar para o <em>active</em>, vai olhar para
+    o <em>idle</em>, <code>hikaricp_connections_idle</code>.
+  </p>
+  <p>
+    [02:17] Então, é <em>idle</em>, já temos as conexões em estado
+    <em>idle</em>, em estado de espera. Vou colocar como "<em>idle</em>" a
+    legenda e vamos adicionar outra <em>query</em> que vai ser o estado
+    pendente, o "pending".
+  </p>
+  <p>
+    [02:40] Todas essas métricas existem na JVM. Já entrou o
+    <code>pending</code> em estado pendente, temos três métricas sendo
+    "plotadas" nesse gráfico, três séries temporais distintas.
+  </p>
+  <p>
+    [02:58] Vou manter o “Time series”, vou colocar o título como “CONNECTION
+    STATE” e descrição como “Estado das conexões com o database”.
+  </p>
+  <p>
+    [03:23] Descendo, vou colocar a legenda em um formato tabular. Posso
+    colocá-la do lado direito, fica legal também, vamos fazer uma experiência
+    com isso. Nos valores da legenda, vou colocar o mínimo, o máximo, o último e
+    o total – apesar de o total ser totalmente irrelevante para nós porque ele
+    só vai fazer um contador.
+  </p>
+  <p>
+    [04:03] Vou até tirar o total para não gerar confusão. Então, mínimo, máximo
+    e último. Aqui, vou trabalhar com a opacidade, vou deixar em 10. Eu gosto
+    dessa configuração, você não precisa fazer assim. Se você achar outro jeito
+    mais interessante, tudo bem, isso é só o <em>layout</em> mesmo, o que é
+    importa é a métrica e o gráfico sendo "plotado".
+  </p>
+  <p>
+    [04:28] Aqui, vou colocar uma opacidade no gradiente; vou tirar os pontos,
+    não gosto dos pontos; não vou trabalhar no “Eixo X” ou “Eixo Y”; a unidade
+    não vai fazer diferença, vou deixar “<em>Short</em>” porque são números
+    inteiros.
+  </p>
+  <p>
+    [04:54] Não vou trabalhar com “<em>Threshold</em>”, é um gráfico. Está feito
+    esse painel. Ele é bem interessante para nós. Tenho o “CONNECTION STATE”
+    criado, vou descê-lo e diminuí-lo. Está bagunçado, mas já vamos corrigir,
+    vai ficar legal.
+  </p>
+  <p>
+    <img
+      src="https://caelum-online-public.s3.amazonaws.com/2522-monitoramento/Transcri%C3%A7%C3%A3o/Aula+02/grafana_03.png"
+      alt='Gráfico "*Connection state*". O eixo X mostra a passagem do tempo, de minuto em minuto, o eixo Y apresenta os valores 0, 5 e 10. A linha amarela (que representa "*idle*") é estável no número 10, exceto uma leve queda perto de 23:25. A linha verde ("*active*") está estável em 0, exceto por um leve aumento, também perto de 23:21. A linha azul ("*pending*") permanece no 0 por todo o período mostrado no gráfico.'
+    />
+  </p>
+  <p>
+    [05:37] Está o “CONNECTION STATE”, vamos criar mais um painel. Vou adicionar
+    mais um painel e esse painel vai ser o “Connection Timeout”, vai ser o
+    número de conexões que estão em <em>timeout</em>.
+  </p>
+  <p>
+    [05:56] Vou colocar o <code>hikaricp_connections_timeout_total</code>, essa
+    métrica. Vou trabalhar com
+    <code
+      >{application=”$application”, instance=”$instance”,
+      job=”app-forum-api”</code
+    >.
+  </p>
+  <p>
+    [06:28] É isso, não tem muito o que fazer aqui, e o <em>pool</em>, não posso
+    me esquecer, que é a nossa variável <code>pool=”$pool”}</code>. Eu tenho
+    essa informação, só que vou trabalhar novamente com um “<em>Stat</em>” aqui.
+  </p>
+  <p>
+    [06:51] Vou colocar “DB TIMEOUT” como título e, para descrição, “Conexões
+    com o database em timeout”. Você pode colocar uma descrição melhor se você
+    quiser, não tem problema.
+  </p>
+  <p>
+    [07:24] Aqui, é um contador. Estamos pegando o <code>timeout_total</code>,
+    ele traz o total para nós, isso não é legal, então vamos fazer uma mudança
+    nisso, vou colocar um <em>range time</em> de <code>[1m]</code> e vou
+    trabalhar com o <code>increase</code>.
+  </p>
+  <p>
+    [07:47] Só para pegar a taxa de crescimento dele por minuto. Vai estar “0”
+    porque não estamos com o <em>timeout</em> em nenhuma conexão. Vamos
+    trabalhar dessa forma.
+  </p>
+  <p>
+    [08:02] Aqui, em “<em>Color mode</em>”, vou tirar o “<em>Graph</em>”; em
+    “Unidade”, novamente estamos trabalhando com o número inteiro, então não tem
+    o que mudar. Tendo 5 conexões de <em>timeout</em> em um minuto – até menos
+    –, nós podemos considerar que temos um problema.
+  </p>
+  <p>
+    [08:32] Vou deixar 5 aqui e está certo. Está feito esse “DB Timeout”, o nome
+    ficou estranho, vou tentar aumentar, “DB CONNECTION TIMEOUT”.
+  </p>
+  <p>
+    [08:54] Voltando aqui, tenho esse painel que foi criado. Posso trabalhar com
+    ele, agora vou descer, posso diminuir um pouco aqui para ficar mais
+    interessante, só para deixarmos o <em>layout</em> mais enxuto.
+  </p>
+  <p>
+    <img
+      src="https://caelum-online-public.s3.amazonaws.com/2522-monitoramento/Transcri%C3%A7%C3%A3o/Aula+02/Imagens/grafana_04.png"
+      alt='*Layout* com todos os gráficos criados dentro de API BASIC. Temos "Uptime", "Start Time", "Users Logged", "Auth Errors", "JDBC pool", "DB connection timeout", "Connection state" e "Warn and Error log".'
+    />
+  </p>
+  <p>
+    [09:30] Tenho o meu “ERROR LOG” aqui, vou editá-lo e vou mudar a disposição
+    das estatísticas dele. Vamos agora colocar a prova isso. Vou parar o MySQL e
+    vou causar o caos completo porque vou derrubar o Redis. Vamos ver o que vai
+    acontecer.
+  </p>
+  <p>
+    [10:17] O “JDBC Pool” caiu na hora, essa métrica é alimentada por
+    <em>scrape</em>. Como ela é um <em>counter</em>, ele traz na hora a
+    informação para nós. “DB Connection Timeout” também vai ser alimentado, mas
+    está por minuto, então é só nós esperarmos um pouco para ver a mudança dele.
+  </p>
+  <p>
+    [10:35] Aqui, já começamos a ver que as conexões que estavam em
+    <em>idle</em> já baixaram, as pendentes já tiveram um crescimento – tem uma
+    pendente – e agora o “DB Connection Timeout” já começa a ser alterado.
+  </p>
+  <p>
+    [10:54] Vou até fazer uma edição nele, na parte de decimal, vou deixar como
+    “0” só para eu ter um número mais interessante a ser exibido e não gerar
+    dúvida para vocês.
+  </p>
+  <p>
+    [11:10] Então, já está com duas conexões em “Timeout” e já temos os
+    <em>warns</em> com 19, o total de <em>warns</em> que tivemos na aplicação
+    até agora, desde a subida, foi 73; temos 24 erros; temos “Auth errors” 0,
+    porque ninguém consegue tentar autenticar; nenhum usuário logado; e o
+    <em>pool</em> de conexões JDBC está lá embaixo.
+  </p>
+  <p>
+    [11:41] Está aqui a prova de que a nossa métrica funciona bem. Só mais um
+    ajuste em “DB Connection Timeout”, vou no “<em>Threshold</em>”, vou subi-lo,
+    já sei que, se eu tiver “2” conexões ganhando <em>timeout</em>, eu estou com
+    problema dentro desse nosso cenário que é um laboratório.
+  </p>
+  <p>
+    [12:03] Aqui é mais para entendermos e termos o primeiro contato com a
+    composição de um <em>dashboard</em>. Vou agora subir a aplicação, acho que
+    está de bom tamanho o nosso teste, já validamos, está tudo certo.
+  </p>
+  <p>
+    [12:19] Vou começar subindo o <code>mysql</code> e agora vou subir o
+    <code>redis</code>. Pronto, agora tudo vai voltar ao normal, a aplicação vai
+    se restabelecer e nós encerramos esse capítulo por aqui, com a composição
+    desses primeiros painéis.
+  </p>
+  <p>
+    [12:44] Fizemos o <em>basic</em>, mas, no próximo capítulo, já vamos estar
+    lidando com métricas que correspondem à experiência do usuário final. Vamos
+    falar um pouco de <em>golden signals</em>, vamos falar de uma metodologia
+    chamada RED e de outra metodologia chamada USE, mas o nosso foco será na
+    metodologia RED que é direcionada à experiência do usuário final.
+  </p>
+  <p>[13:13] Então, é isso, nos vemos na próxima aula.</p>
+</div>
