@@ -25,9 +25,11 @@ import io.micrometer.core.instrument.MeterRegistry;
 @Profile(value = {"prod", "test"})
 public class AutenticacaoController {
 	
+	//Metricas customizadas do Prometheus
 	Counter authUserSuccess;
 	Counter authUserErrors;
 
+    // Registro das metricas para o prometheus
 	public AutenticacaoController(MeterRegistry registry) {
     	authUserSuccess = Counter.builder("auth_user_success")
             .description("usuarios autenticados")
@@ -51,10 +53,12 @@ public class AutenticacaoController {
 		try {
 			Authentication authentication = authManager.authenticate(dadosLogin);
 			String token = tokenService.gerarToken(authentication);
+			//Em caso de sucesso, incrementa o contador de sucesso para o prometheus
 			authUserSuccess.increment();
 			return ResponseEntity.ok(new TokenDto(token, "Bearer"));
 			
 		} catch (AuthenticationException e) {
+			//Em caso de erro, incrementa o contador de sucesso para o prometheus
 			authUserErrors.increment();
 			return ResponseEntity.badRequest().build();
 		}
