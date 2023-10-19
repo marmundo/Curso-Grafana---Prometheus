@@ -10,6 +10,9 @@ networks:
   monit:
   proxy:
 
+volumes:
+  grafana:
+
 services:
   redis-forum-api:
     image: redis
@@ -121,5 +124,3 @@ services:
       - proxy
     depends_on:
       - grafana-forum-api
-  volumes:
-    grafana:
