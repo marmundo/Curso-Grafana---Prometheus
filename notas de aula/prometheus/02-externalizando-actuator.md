@@ -1,6 +1,6 @@
 \[00:00\] Sejam bem-vindos à nossa aula 2 do curso. Agora, vamos configurar o Actuator e enfim tornar a nossa aplicação observável – ou, pelo menos, iniciar esse trajeto.
 
-\[00:16\] Aqui foi onde paramos na aula anterior, nós conseguimos implantar o ambiente e subir a aplicação. A primeira coisa que eu peço a você é que você dê uma olhada na documentação do Actuator. É só você digitar no Google “Actuator” e você vai encontrar em um dos primeiros resultados a documentação do Spring dizendo como você vai habilitar o Actuator.
+\[00:16\] Aqui foi onde paramos na aula anterior, nós conseguimos implantar o ambiente e subir a aplicação. A primeira coisa que eu peço a você é que você dê uma olhada na documentação do Actuator. É só você digitar no Google “Actuator” e você vai encontrar em um dos primeiros resultados a documentação do Spring dizendo como você vai habilitar o Actuator [link](https://docs.spring.io/spring-boot/docs/1.4.0.M2/reference/html/production-ready.html).
 
 \[00:48\] O Actuator entra como uma dependência. No nosso caso, estamos utilizando o Maven. Vou copiar essa dependência. Se estiver usando Gradle, é outra forma de implantação, mas, no nosso caso, é o Maven.
 
