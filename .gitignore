@@ -1,0 +1,2 @@
+container/prometheus/prometheus_data/**
+container/Grafana/grafana.db
