@@ -1,6 +1,6 @@
 \[00:00\] Vamos dar prosseguimento nas nossas aulas. Na última aula, nós fizemos a configuração do Actuator e conseguimos externalizar as métricas da JVM.
 
-\[00:14\] Essas métricas ajudam bastante, mas não são o que nós realmente queremos, nós precisamos que as métricas estejam legíveis para o Prometheus. Para conseguirmos fazer isso, temos que trabalhar com o Micrometer.
+\[00:14\] Essas métricas ajudam bastante, mas não são o que nós realmente queremos, nós precisamos que as métricas estejam legíveis para o Prometheus. Para conseguirmos fazer isso, temos que trabalhar com o Micrometer [link](https://micrometer.io/).
 
 \[00:33\] Basicamente, ele vai ser a nossa fachada de métricas, levando as métricas em um formato legível para o Prometheus.
 
