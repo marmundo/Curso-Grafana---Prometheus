@@ -17,12 +17,12 @@ Crie uma pasta para cada seção de aquecimento e dashboard RED
 Você deve criar um dashboard no Grafana para visualizar as seguintes métricas:
 
 1. Exiba quantas requisições estão sendo feitas por segundo.
-2. Exiba quantas requisições estão sendo feitas por segundo por classe de status http (1XX, 2XX, 3XX, 4XX, 5XX).
+2. Exiba quantas requisições estão sendo feitas por segundo por classe de status http (1.., 2.., 3.., 4.., 5..).
 3. Exiba quantas requisições diferentes da classe 2XX estão sendo feitas.
 4. Exiba quão a porcentagem do tráfego total está falhando na última hora.
 5. Exiba quais métodos http(get, post, put, update, delete) os erros estão acontecendo.
 
-# Construa o Dashoboard RED
+# Construa o Dashboard RED
 
 Um dashboard RED deve exibir:
 
