@@ -20,7 +20,7 @@ Você deve criar um dashboard no Grafana para visualizar as seguintes métricas:
 2. Exiba quantas requisições estão sendo feitas por segundo por classe de status http (1XX, 2XX, 3XX, 4XX, 5XX).
 3. Exiba quantas requisições diferentes da classe 2XX estão sendo feitas.
 4. Exiba quão a porcentagem do tráfego total está falhando na última hora.
-5. Exiba em quais métodos http os erros estão acontecendo.
+5. Exiba quais métodos http(get, post, put, update, delete) os erros estão acontecendo.
 
 # Construa o Dashoboard RED
 
