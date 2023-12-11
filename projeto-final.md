@@ -31,3 +31,11 @@ Um dashboard RED deve exibir:
 - Duration: A quantidade de tempo de resposta das requisições
 
 Você deve criar uma linhas com os gráficos necessários para o RED para três partes do sistema: Load Balance, App, DataBase.
+
+# Alertas
+
+Crie alguns alertas para serem notificados em um canal de texto do discord ou outra ferramenta que deseje. Relate na descrição do alerta informações para que a equipe possa entender os motivos de estar sendo alertados.
+
+# Compartilhamento do Dashboard
+
+Exporte o diagrama em versão snapshot publicamente para que qualquer um na internet observe a qualidade dos serviços da Damasceno Inc.
