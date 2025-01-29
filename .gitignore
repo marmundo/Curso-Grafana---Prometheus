@@ -4,3 +4,4 @@ container/Grafana/grafana.db
 container/Grafana/
 node_modules/
 package*.json
+*.html
