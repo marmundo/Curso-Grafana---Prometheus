@@ -2,3 +2,4 @@ container/prometheus/prometheus_data/**
 container/Grafana/grafana.db
 *.db
 container/Grafana/
+node_modules/
