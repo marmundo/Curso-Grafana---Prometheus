@@ -138,6 +138,12 @@ O método RED foi popularizado pelo **Google SRE (Site Reliability Engineering)*
 
 ---
 
+# RED no Grafana
+
+![RED no Grafana](https://www.percona.com/blog/wp-content/uploads/2020/06/4.png)
+
+---
+
 # Conclusão
 
 O método RED é uma abordagem eficaz para monitoramento e observabilidade, proporcionando uma visão clara e concisa da saúde do sistema. Ao focar em Rate, Errors e Duration, você pode detectar e resolver problemas rapidamente, garantindo a estabilidade e performance do seu sistema.
