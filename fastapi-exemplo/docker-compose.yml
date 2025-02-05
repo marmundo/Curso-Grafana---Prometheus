@@ -11,8 +11,6 @@ services:
       - PROMETHEUS_MULTIPROC_DIR=/tmp
     volumes:
       - .:/app
-    depends_on:
-      - prometheus
     networks:
       - monitoring
 
