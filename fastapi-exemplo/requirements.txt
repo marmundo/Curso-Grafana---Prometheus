@@ -1,0 +1,4 @@
+prometheus_fastapi_instrumentator
+fastapi 
+uvicorn
+starlette
