@@ -5,3 +5,5 @@ container/Grafana/
 node_modules/
 package*.json
 *.html
+/fastapi-exemplo/__pycache__
+/fastapi-exemplo/grafana
