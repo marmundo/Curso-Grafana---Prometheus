@@ -359,7 +359,7 @@ scrape_configs:
   # Monitoramento da aplicação Flask
   - job_name: 'flask_app'
     static_configs:
-      - targets: ['host.docker.internal:5000']  # Para Docker no Windows/Mac
+      - targets: ['host.docker.internal:5000']  # Para Docker no Windows/Mac, para linux obter o ip do host pela comando ip a
       # Use 'localhost:5000' se rodar Prometheus diretamente
     metrics_path: /metrics
     scrape_interval: 5s  # Coleta mais frequente para a aplicação
